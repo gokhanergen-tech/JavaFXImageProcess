@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.Controller.ObjectDetection"
+            prefHeight="400.0" prefWidth="600.0"
+
+            >
+    <top>
+
+        <BorderPane fx:id="pane"  style="-fx-background-color:#00000050;-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+
+            <padding>
+                <Insets topRightBottomLeft="5"/>
+            </padding>
+            <left>
+                <Button fx:id="back" onMouseMoved="#onHover" onAction="#back_button" onMouseExited="#mouseLeaveButton" style="-fx-background-color:blue;-fx-cursor:hand" textFill="white" text="Menü"> </Button>
+            </left>
+
+            <center>
+                <Label textAlignment="CENTER" textFill="white"></Label>
+
+            </center>
+        </BorderPane>
+
+
+    </top>
+    <center>
+        <HBox>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <children>
+                <ImageView fitHeight="440" fitWidth="600" pickOnBounds="true" fx:id="image">
+                    <image>
+                        <Image url="@../images/cat.jpg">
+
+                        </Image>
+                    </image>
+                </ImageView>
+                <VBox spacing="5">
+                    <padding>
+                        <Insets left="10"/>
+                    </padding>
+                    <children>
+                        <ImageView  fitWidth="200" fitHeight="217.5" fx:id="image1"><image><Image url="@../images/cat.jpg"/> </image></ImageView>
+                        <ImageView  fitWidth="200" fitHeight="217.5" fx:id="image2"><image><Image url="@../images/cat.jpg"/> </image></ImageView>
+                    </children>
+
+                </VBox>
+            </children>
+
+        </HBox>
+    </center>
+    <right>
+       <VBox spacing="10"  >
+           <padding>
+               <Insets topRightBottomLeft="20"/>
+
+           </padding>
+           <HBox>
+               <children>
+                   <ImageView fitHeight="40" fitWidth="40" fx:id="max"/>
+                   <ImageView fitHeight="40" fitWidth="40" fx:id="min"/>
+
+               </children>
+           </HBox>
+           <Label text="Hue Start" />
+           <Slider fx:id="hueStart" min="0" max="180" value="20" blockIncrement="1" />
+           <Label text="Hue Stop" />
+           <Slider fx:id="hueStop" min="0" max="180" value="50" blockIncrement="1" />
+           <Label text="Saturation Start" />
+           <Slider fx:id="saturationStart" min="0" max="255" value="60" blockIncrement="1" />
+           <Label text="Saturation Stop" />
+           <Slider fx:id="saturationStop" min="0" max="255" value="200" blockIncrement="1" />
+           <Label text="Value Start" />
+           <Slider fx:id="valueStart" min="0" max="255" value="50" blockIncrement="1" />
+           <Label text="Value Stop" />
+           <Slider fx:id="valueStop" min="0" max="255" value="255" blockIncrement="1" />
+       </VBox>
+    </right>
+
+
+
+</BorderPane>

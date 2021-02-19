@@ -1,0 +1,74 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.media.MediaPlayer?>
+<?import javafx.scene.media.Media?>
+<StackPane fx:id="pane" fx:controller="sample.Controller.Controller"
+           xmlns:fx="http://javafx.com/fxml">
+
+    <HBox>
+        <ScrollPane fx:id="scroll" pannable="true" prefWidth="210">
+            <content>
+                <VBox fx:id="vbox" prefWidth="210" spacing="10" prefHeight="275">
+                    <padding><Insets top="10"></Insets></padding>
+                 <children>
+
+                 </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+        <VBox>
+            <children>
+                <Button fx:id="button" text="Take">
+                    <style>
+                        -fx-background-color:red
+                    </style>
+                </Button>
+                <Button fx:id="save" text="Save">
+
+                </Button>
+                <Button fx:id="camOn" text="Cam On">
+
+                </Button>
+                <Button fx:id="camOff" text="Cam Off">
+
+                </Button>
+                <Button fx:id="photo" text="Take And Save">
+
+                </Button>
+                <Button fx:id="objectDetect"  text="Object Detection">
+
+                </Button>
+                <CheckBox fx:id="checkbox" disable="true" text="Canny Active"></CheckBox>
+                <CheckBox fx:id="removeBackground" disable="true" text="Remove Background"></CheckBox>
+                <CheckBox fx:id="removeInverseBackground" disable="true" text="Remove Inverse Background"></CheckBox>
+                <Slider fx:id="slider" disable="false" maxWidth="150"></Slider>
+                <VBox>
+                    <padding><Insets top="5"></Insets></padding>
+                    <children>
+                        <Line startX="0" endX="150"></Line>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        <Line fx:id="lineVert" startY="0" endY="150"></Line>
+
+        <ImageView fx:id="image" preserveRatio="true" pickOnBounds="true"></ImageView>
+    </HBox>
+
+    <fx:include source="loading.fxml"></fx:include>
+</StackPane>
